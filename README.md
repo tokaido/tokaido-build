@@ -7,6 +7,7 @@ Compiling static ruby:
     source ~/.bashrc
     sm ext install tokaidoapp tokaido/tokaido-build
     sm tokaidoapp dependencies
+    sm tokaidoapp packages
     sm tokaidoapp install
 
 Ruby is installed in `$HOME/.sm/pkg/versions/tokaidoapp/1.9.3-p125/`

@@ -1,2 +1,2 @@
 dependencies=tokaidoapp_install_dependencies()
-
+packages=tokaidoapp_install_packages()
