@@ -4,7 +4,7 @@ tokaido_install_package()
 {
   package reset
   includes $1
-  package is installed name $1 &&
+  package is installed name "$1" &&
     log step "$1 ~ already installed" true ||
     CFLAGS="-fPIC" LDFLAGS="-fPIC" package install name $@ static
 }
