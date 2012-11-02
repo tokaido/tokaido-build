@@ -4,20 +4,25 @@ tokaido_install_package()
 {
   package reset
   includes $1
-  package is installed name "$1" &&
+  package is installed name "$1" "$1" &&
     log step "$1 ~ already installed" true ||
     CFLAGS="-fPIC" LDFLAGS="-fPIC" package install name $@ static
 }
 
 tokaidoapp_install_dependencies()
 {
-  typeset _set _lib
-  typeset -a _libs
+  typeset _set
 
   for _set in libraries tools gnu
   do
     set_install ${_set}
   done
+}
+
+tokaidoapp_install_packages()
+{
+  typeset _lib
+  typeset -a _libs
 
   _libs=( pkg-config gdbm libyaml zlib ncurses )
   os is darwin || _libs+=( ncursesw )
