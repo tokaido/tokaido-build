@@ -1,4 +1,4 @@
 version=1.9.3-p327
-package_extension=tar.bz2
+archive_format=tar.bz2
 base_url=http://ftp.ruby-lang.org/pub/ruby/1.9/
-configure_flags=--enable-load-relative --with-static-linked-ext --disable-shared --disable-install-doc
+configure_flags=--enable-load-relative --with-static-linked-ext --disable-shared --disable-install-doc --with-arch=x86_64
