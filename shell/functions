@@ -36,7 +36,7 @@ tokaidoapp_install_packages()
   if os is darwin
   then
     # TODO: why limit openssl on osx ?
-    tokaido_install_package openssl version 0.9.8t
+    tokaido_install_package openssl version 0.9.8x
   else
     tokaido_install_package openssl
   fi
