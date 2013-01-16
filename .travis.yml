@@ -2,9 +2,10 @@ language: ruby
 rvm:
   - 2.0.0
 before_install:
-  - sudo apt-get install texinfo
+  - sudo apt-get install texinfo libglib2.0-0 libglib2.0-dev libglib2.0-bin
   - curl -L https://raw.github.com/sm/sm/master/bin/sm-installer | sh
   - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
+  - export CC="$( which gcc )"
 install: sm ext install tokaidoapp .
 before_script:
   - sm tokaidoapp dependencies
