@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+  - 2.0.0
+before_install:
+  - curl -L https://raw.github.com/sm/sm/master/bin/sm-installer | sh
+  - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
+install: sm ext install tokaidoapp .
+before_script:
+  - sm tokaidoapp dependencies
+  - sm tokaidoapp packages
+  - sm tokaidoapp install
+script: which ruby | grep \.sm
+after_success:
+  -
+  - ruby -v
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#rvm-test"
+  email:
+    recipients:
+      - mpapis@gmail.com
+    on_failure: change
