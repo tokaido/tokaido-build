@@ -10,7 +10,7 @@ install: sm ext install tokaidoapp .
 before_script:
   - sm tokaidoapp dependencies
   - sm tokaidoapp packages
-  - sm tokaidoapp install
+  - sm tokaidoapp install --without-X11 --without-tcl --without-tk
 script: which ruby | grep \.sm
 after_success:
   - ruby -v
