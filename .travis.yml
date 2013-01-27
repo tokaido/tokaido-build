@@ -1,6 +1,7 @@
-language: ruby
-rvm:
-  - 2.0.0
+language: objective-c
+#language: ruby
+#rvm:
+#  - 2.0.0
 before_install:
   - sudo apt-get install texinfo libglib2.0-0 libglib2.0-dev libglib2.0-bin
   - curl -L https://raw.github.com/sm/sm/master/bin/sm-installer | sh
