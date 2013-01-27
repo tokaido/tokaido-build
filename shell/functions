@@ -25,7 +25,7 @@ tokaidoapp_install_packages()
   typeset _lib
   typeset -a _libs
 
-  _libs=( pkg-config autoconf m4 automake libtool gdbm libyaml zlib ncurses )
+  _libs=( libtool gdbm libyaml zlib ncurses )
   os is darwin || _libs+=( ncursesw )
   _libs+=( readline )
 
