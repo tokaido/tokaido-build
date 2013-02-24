@@ -27,12 +27,18 @@ tokaidoapp_install_packages()
 
   _libs=( pkg-config libtool gdbm libyaml zlib ncurses )
   os is darwin || _libs+=( ncursesw )
-  _libs+=( readline openssl )
+  _libs+=( readline )
 
   for _lib in ${_libs[@]}
   do
     tokaido_install_package ${_lib}
   done
+
+  # Ruby 1.9 can not compile with openssl 1.0.1+
+  if os is darwin
+  then tokaido_install_package openssl version 0.9.8y
+  else tokaido_install_package openssl
+  fi
 }
 
 tokaidoapp_prefetch()
