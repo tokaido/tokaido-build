@@ -38,6 +38,7 @@ tokaidoapp_install_packages()
 tokaidoapp_prefetch()
 {
   package define \
+    base_url "http://ftp.ruby-lang.org/pub/ruby/${package_version%.*}/" \
     file "ruby-${package_version}.${archive_format}" \
     dir  "ruby-${package_version}"
 }
