@@ -35,7 +35,7 @@ tokaidoapp_install_packages()
   done
 
   # Ruby 1.9 can not compile with openssl 1.0.1+
-  if os is darwin
+  if os is darwin && [[ "${package_version%.*}" == "1.9" ]]
   then tokaido_install_package openssl version 0.9.8y
   else tokaido_install_package openssl
   fi
