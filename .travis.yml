@@ -6,7 +6,7 @@ before_script:
   - rvm get head
   - rvm autolibs smf
   - sudo mkdir -p /etc/openssl
-  - sudo chown -R $USER: /etc/openssl
+  - "sudo chown -R $USER: /etc/openssl"
 script: rvm install $RUBY --movable
 after_success:
   - rvm use $RUBY
