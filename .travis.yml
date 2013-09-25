@@ -1,16 +1,16 @@
+env: RUBY=2.0.0-p247
 language: objective-c
 before_install:
-  - curl -L https://raw.github.com/sm/sm/master/bin/sm-installer | sh
+  - curl -L https://get.smf.sh | sh
+  - curl -L https://get.rvm.io | bash
   - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
-  - export CC="$( which gcc )"
-install: sm ext install tokaidoapp .
+install: rvm install $RUBY --movable
 before_script:
-  - sm tokaidoapp dependencies
-  - sm tokaidoapp packages
-  - sm tokaidoapp install --without-X11 --without-tcl --without-tk
-script: which ruby | grep \.sm
+  - rvm use $RUBY
+script: ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
 after_success:
   - ruby -v
+  - rvm prepare $RUBY
 notifications:
   irc:
     channels:

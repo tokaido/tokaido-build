@@ -1,14 +1,19 @@
 # Static Ruby
 
+*(make sure to read messages and warnings)*
+
+Installing used software:
+
+    curl -L https://get.smf.sh | sh
+    curl -L https://get.rvm.io | bash
+
 Compiling static ruby:
 
-    curl -L https://raw.github.com/sm/sm/master/bin/sm-installer | sh
-    echo "export PATH=\"$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:\$PATH\"" >> ~/.bashrc
-    source ~/.bashrc
-    sm ext install tokaidoapp tokaido/tokaido-build
-    sm tokaidoapp dependencies
-    sm tokaidoapp packages
-    sm tokaidoapp install
+    source ~/.rvm/scripts/rvm
+    rvm install 2.0.0-p247 --movable
 
-Ruby is installed in `$HOME/.sm/pkg/versions/tokaidoapp/2.0.0-p247/`
+Ruby is installed in `$HOME/.rvm/rubies/ruby-2.0.0-p247/`, to package:
 
+    rvm prepare 2.0.0-p247
+
+Will generate: `ruby-2.0.0-p247.tar.bz2`.
