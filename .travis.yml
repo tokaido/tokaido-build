@@ -2,8 +2,8 @@ env: RUBY=2.0.0-p247
 language: objective-c
 before_install:
   - curl -L https://get.smf.sh | sh
-  - curl -L https://get.rvm.io | bash
   - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
+  - rvm get head
 install: rvm install $RUBY --movable
 before_script:
   - rvm use $RUBY
