@@ -4,7 +4,7 @@ before_install:
   - curl -L https://get.smf.sh | sh
   - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
   - rvm get head
-  - rvm reload
+  - rvm autolibs smf
 install: rvm install $RUBY --movable
 before_script:
   - rvm use $RUBY
