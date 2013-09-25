@@ -1,17 +1,18 @@
 env: RUBY=2.0.0-p247
 language: objective-c
-before_install:
-  - curl -L https://get.smf.sh | sh
+install: curl -L https://get.smf.sh | sh
+before_script:
   - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
   - rvm get head
   - rvm autolibs smf
-install: rvm install $RUBY --movable
-before_script:
-  - rvm use $RUBY
-script: ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
+script: rvm install $RUBY --movable
 after_success:
+  - rvm use $RUBY
   - ruby -v
+  - ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
   - rvm prepare $RUBY
+after_failure:
+  - find $rvm_path/log/ -type f | xargs ls -t | head -n 1 | xargs cat
 notifications:
   irc:
     channels:
