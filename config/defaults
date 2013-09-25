@@ -1,3 +1,0 @@
-version=2.0.0-p247
-archive_format=tar.bz2
-configure_flags=--enable-load-relative --with-static-linked-ext --disable-shared --disable-install-doc
