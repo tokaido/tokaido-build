@@ -1,4 +1,4 @@
-env: RUBY=2.0.0-p247
+env: RUBY=2.0.0-p353
 language: objective-c
 install: curl -L https://get.smf.sh | sh
 before_script:
