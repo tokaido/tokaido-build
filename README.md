@@ -1,5 +1,7 @@
 # Static Ruby
 
+[![Build Status](https://travis-ci.org/tokaido/tokaido-build.png?branch=master)](https://travis-ci.org/tokaido/tokaido-build)
+
 *(make sure to read messages and warnings)*
 
 Installing used software:
@@ -10,10 +12,10 @@ Installing used software:
 Compiling static ruby:
 
     source ~/.rvm/scripts/rvm
-    rvm install 2.0.0-p247 --movable
+    rvm install 2.1.0 --movable
 
-Ruby is installed in `$HOME/.rvm/rubies/ruby-2.0.0-p247/`, to package:
+Ruby is installed in `$HOME/.rvm/rubies/ruby-2.1.0/`, to package:
 
-    rvm prepare 2.0.0-p247
+    rvm prepare 2.1.0
 
-Will generate: `ruby-2.0.0-p247.tar.bz2`.
+Will generate: `ruby-2.1.0.tar.bz2`.
