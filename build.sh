@@ -14,6 +14,7 @@ sm sqlite3 install static
 
 curl -L https://get.rvm.io | bash
 source "$HOME/.rvm/scripts/rvm"
+rvm autolibs smf
 
 rvm install $ruby --movable
 rvm use     $ruby

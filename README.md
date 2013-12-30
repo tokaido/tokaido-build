@@ -12,6 +12,7 @@ Installing used software:
 Compiling static ruby:
 
     source ~/.rvm/scripts/rvm
+    rvm autolibs smf
     rvm install 2.1.0 --movable
 
 Ruby is installed in `$HOME/.rvm/rubies/ruby-2.1.0/`, to package:
