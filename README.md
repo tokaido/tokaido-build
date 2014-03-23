@@ -13,10 +13,10 @@ Compiling static ruby:
 
     source ~/.rvm/scripts/rvm
     rvm autolibs smf
-    rvm install 2.1.0 --movable
+    rvm install 2.1.1 --movable
 
-Ruby is installed in `$HOME/.rvm/rubies/ruby-2.1.0/`, to package:
+Ruby is installed in `$HOME/.rvm/rubies/ruby-2.1.1/`, to package:
 
-    rvm prepare 2.1.0
+    rvm prepare 2.1.1
 
-Will generate: `ruby-2.1.0.tar.bz2`.
+Will generate: `ruby-2.1.1.tar.bz2`.
