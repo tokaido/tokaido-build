@@ -13,9 +13,10 @@ before_script:
 script: rvm install $RUBY --movable
 after_success:
   - rvm use $RUBY
+  - "if which otool >/dev/null ; then otool -L $MY_RUBY_HOME/bin/ruby ; fi"
   - ruby -v
+  - ruby -ropenssl -ryaml -e 'puts ["libyaml "+Psych::LIBYAML_VERSION, OpenSSL::OPENSSL_VERSION]'
   - ruby -ropenssl -ryaml -ropen-uri -e 'puts(open("https://google.com").each_line.first.to_yaml)'
-  - ruby -ryaml -e 'puts Psych::LIBYAML_VERSION'
   - rvm prepare $RUBY
 after_failure:
   - find $rvm_path/log/ -type f | xargs ls -t | head -n 1 | xargs cat
