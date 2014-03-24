@@ -4,6 +4,7 @@ language: objective-c
 install: curl -L https://get.smf.sh | sh
 before_script:
   - export PATH="$HOME/.sm/bin:$HOME/.sm/pkg/active/bin:$PATH"
+  - export rvm_git_clone_depth=1
   - rvm get head
   - rvm autolibs smf
   - sudo mkdir -p /etc/openssl
