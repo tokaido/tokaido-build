@@ -1,5 +1,5 @@
 osx_image: mavericks
-env: RUBY=2.1.1
+env: RUBY=ruby-head
 language: objective-c
 install: curl -L https://get.smf.sh | sh
 before_script:
